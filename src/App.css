@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.App {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: rgb(255,99,71);
+  color: rgb(255,99,71);
+}
+
+.wrapper {
+  background-color: #fff;
+  border-radius: .2em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 30em;
+  max-height: 15em;
+  margin-top: 10em;
+  padding: 2em;
+}
+
+.quote {
+  display: flex;
+  margin-right: 2em;
+}
+
+.buttons {
+  display: flex;
+  gap: 21em;
+  justify-content: flex-end;
+}
+
+#icon {
+  margin-right: .4em;
+}
+
+button {
+  border: none;
+  border-radius: .5em;
+  padding: .5em .8em;
+  background: rgb(255,99,71);
+  color: #fff;
+  cursor: pointer;
+  opacity: 1;
+}
+
+button:hover {
+  opacity: .9;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-left: 1em;
+}
+
+h3 {
+  text-align: end;
+}
