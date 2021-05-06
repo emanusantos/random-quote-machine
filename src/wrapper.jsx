@@ -22,8 +22,8 @@ const colors = [
 export default function Wrapper() {
 
     const [quo, setQuo] = useState('Click to generate new quote!')
-
     const [auth, setAuth] = useState('Someone')
+    const [btn, setBtn] = useState({ backgroundColor: 'rgb(255,99,71)' })
 
     let randomIndex = Math.floor(Math.random() * quotes.length)
     const onClickRandomButton = () => {
@@ -31,6 +31,7 @@ export default function Wrapper() {
         setAuth(quotes[randomIndex].name)
         document.body.style.backgroundColor = colors[randomIndex]
         document.body.style.color = colors[randomIndex]
+        setBtn({ backgroundColor: colors[randomIndex] })
     };
 
     return (
@@ -42,8 +43,8 @@ export default function Wrapper() {
                 <h3><em>- {auth}</em></h3>
             </div>
             <div className="buttons">
-            <a href="http://twitter.com" target="_blank" title="Tweet this quote!"><button><FaTwitter size="1.5em"/></button></a>
-                <button onClick={onClickRandomButton}>New Quote</button>
+            <a href="http://twitter.com" target="_blank" title="Tweet this quote!"><button style={btn}><FaTwitter size="1.5em"/></button></a>
+                <button style={btn} onClick={onClickRandomButton}>New Quote</button>
             </div>
         </div>
     )
