@@ -20,14 +20,17 @@ const colors = [
   ];
 
 export default function Wrapper() {
+
     const [quo, setQuo] = useState('Click to generate new quote!')
-    const [auth, setAuth] = useState('Some guy')
 
-    const randomIndex = Math.floor(Math.random() * quotes.length)
+    const [auth, setAuth] = useState('Someone')
 
+    let randomIndex = Math.floor(Math.random() * quotes.length)
     const onClickRandomButton = () => {
         setQuo(quotes[randomIndex].sentence)
         setAuth(quotes[randomIndex].name)
+        document.body.style.backgroundColor = colors[randomIndex]
+        document.body.style.color = colors[randomIndex]
     };
 
     return (
