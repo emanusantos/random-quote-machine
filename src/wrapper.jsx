@@ -26,23 +26,29 @@ export default function Wrapper() {
     const [btn, setBtn] = useState({ backgroundColor: 'rgb(255,99,71)' })
 
     let randomIndex = Math.floor(Math.random() * quotes.length)
+
+
     const onClickRandomButton = () => {
+
+        document.getElementById('quo').animate({ opacity: 0 }, 700)
+        document.getElementById('auth').animate({ opacity: 0 }, 700)
+        document.getElementById('btn').animate({ opacity: 0 }, 700)
         setQuo(quotes[randomIndex].sentence)
         setAuth(quotes[randomIndex].name)
+        setBtn({ backgroundColor: colors[randomIndex] })
         document.body.style.backgroundColor = colors[randomIndex]
         document.body.style.color = colors[randomIndex]
-        setBtn({ backgroundColor: colors[randomIndex] })
     };
 
     return (
         <div className="wrapper">
-            <div className="quote">
+            <div className="quote" id="quo">
                 <h1><FaQuoteLeft size=".9em" id="icon"/>{quo}</h1>
             </div>
-            <div className="author">
+            <div className="author" id="auth">
                 <h3><em>- {auth}</em></h3>
             </div>
-            <div className="buttons">
+            <div className="buttons" id="btn">
             <a href="http://twitter.com" target="_blank" title="Tweet this quote!"><button style={btn}><FaTwitter size="1.5em"/></button></a>
                 <button style={btn} onClick={onClickRandomButton}>New Quote</button>
             </div>
